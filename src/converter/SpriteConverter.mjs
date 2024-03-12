@@ -7,7 +7,9 @@ import Jimp from "@geekcornernpm/jimp-plugins";
  */
 class SpriteConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [width, height, sprites, to, additional_factor = 1] = this.data;

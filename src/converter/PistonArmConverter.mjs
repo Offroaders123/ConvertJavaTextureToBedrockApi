@@ -5,7 +5,9 @@ import { AbstractConverter } from "@modifiedcommand/convert-base-api";
  */
 class PistonArmConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [top_1, top_2, side, to] = this.data;

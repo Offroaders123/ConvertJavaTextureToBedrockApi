@@ -5,7 +5,9 @@ import { AbstractConverter } from "@modifiedcommand/convert-base-api";
  */
 class RenameConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [from, to] = this.data;

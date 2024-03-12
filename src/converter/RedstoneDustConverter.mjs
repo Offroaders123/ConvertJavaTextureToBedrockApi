@@ -6,11 +6,14 @@ import { DeleteConverter } from "./DeleteConverter.mjs";
  */
 class RedstoneDustConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [dot, line_0, line_1, to_cross, to_line] = this.data;
 
+        /** @type {AbstractConverter[]} */
         const to_delete = [];
 
         if (!(await this.output.exists(dot) && await this.output.exists(line_0) && await this.output.exists(line_1))) {

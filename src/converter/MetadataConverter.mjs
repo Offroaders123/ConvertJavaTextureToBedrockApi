@@ -7,7 +7,9 @@ import v4 from "uuid/v4.js";
  */
 class MetadataConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [from, to, uuid_header_file, uuid_module_file] = this.data;

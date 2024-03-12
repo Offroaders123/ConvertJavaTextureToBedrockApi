@@ -6,7 +6,9 @@ import { DeleteConverter } from "./DeleteConverter.mjs";
  */
 class ColorizeOverlayConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [overlays, to] = this.data;

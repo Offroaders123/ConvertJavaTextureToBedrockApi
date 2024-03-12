@@ -5,7 +5,9 @@ import { AbstractConverter } from "@modifiedcommand/convert-base-api";
  */
 class FixWrongRootFolderConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [pack_mcmeta, others] = this.data;
@@ -23,7 +25,7 @@ class FixWrongRootFolderConverter extends AbstractConverter {
 
         this.log.log(`Root folder found in sub folder ${path}`);
 
-        for (const file of[pack_mcmeta, ...others]) {
+        for (const file of [pack_mcmeta, ...others]) {
             if (await this.output.exists(`${path}/${file}`)) {
                 await this.output.rename(`${path}/${file}`, `${file}`);
             }

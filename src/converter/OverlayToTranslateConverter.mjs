@@ -6,11 +6,14 @@ import { DeleteConverter } from "./DeleteConverter.mjs";
  */
 class OverlayToTranslateConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [from, overlay, to, reverse_method, not_delete_overlay] = this.data;
 
+        /** @type {AbstractConverter[]} */
         const to_delete = [];
 
         if (!(await this.output.exists(from) && await this.output.exists(overlay))) {

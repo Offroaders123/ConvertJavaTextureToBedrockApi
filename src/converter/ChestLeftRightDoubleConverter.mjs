@@ -6,7 +6,9 @@ import { DeleteConverter } from "./DeleteConverter.mjs";
  */
 class ChestLeftRightDoubleConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [from_left, from_right, to] = this.data;

@@ -5,7 +5,9 @@ import { AbstractConverter } from "@modifiedcommand/convert-base-api";
  */
 class DespriteConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [input, factor_detect, sprites] = this.data;

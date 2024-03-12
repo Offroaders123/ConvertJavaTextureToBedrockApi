@@ -8,7 +8,9 @@ import Jimp from "@geekcornernpm/jimp-plugins";
  */
 class DialogConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         if (!this.options.experimental) {

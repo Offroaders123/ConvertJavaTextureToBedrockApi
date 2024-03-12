@@ -6,7 +6,9 @@ import { DeleteConverter } from "./DeleteConverter.mjs";
  */
 class AtlasConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [base, count, to] = this.data;

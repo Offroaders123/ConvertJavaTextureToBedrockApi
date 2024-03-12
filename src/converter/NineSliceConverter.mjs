@@ -7,7 +7,9 @@ import { AbstractConverter } from "@modifiedcommand/convert-base-api";
  */
 class NineSliceConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         if (!this.options.experimental) {

@@ -6,7 +6,9 @@ import { MetadataConverter } from "./MetadataConverter.mjs";
  */
 class PlaceholderConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [from, x, y, width, height, factor_detect, to, square_mode, min_pack_format] = this.data;

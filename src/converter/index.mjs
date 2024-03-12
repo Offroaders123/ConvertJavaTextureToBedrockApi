@@ -48,7 +48,7 @@ import { WaterConverter } from "./WaterConverter.mjs";
 import { WeatherConverter } from "./WeatherConverter.mjs";
 
 /**
- * @type {Function<AbstractConverter>[]}
+ * @type {(typeof AbstractConverter)[]}
  */
 const converters = [
     FixWrongRootFolderConverter,

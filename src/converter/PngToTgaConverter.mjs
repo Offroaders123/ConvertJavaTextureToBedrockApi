@@ -7,11 +7,14 @@ import Jimp from "@geekcornernpm/jimp-plugins";
  */
 class PngToTgaConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [from, to, not_delete] = this.data;
 
+        /** @type {AbstractConverter[]} */
         const to_delete = [];
 
         if (!await this.output.exists(from)) {

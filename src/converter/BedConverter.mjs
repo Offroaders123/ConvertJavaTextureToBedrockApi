@@ -5,7 +5,9 @@ import { AbstractConverter } from "@modifiedcommand/convert-base-api";
  */
 class BedConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const block = this.data;
@@ -34,7 +36,7 @@ class BedConverter extends AbstractConverter {
         image.composite(bed_image.clone().crop((22 * factor), (22 * factor), (16 * factor), (6 * factor)), (22 * factor), 0);
 
         // Feeds
-        for (const [from_x, from_y, to_x, to_y, rotate_bottom] of[[50, 0, 0, 44, 0], [50, 6, 0, 38, 90], [50, 12, 12, 44, -90], [50, 18, 12, 38, 180]]) {
+        for (const [from_x, from_y, to_x, to_y, rotate_bottom] of [[50, 0, 0, 44, 0], [50, 6, 0, 38, 90], [50, 12, 12, 44, -90], [50, 18, 12, 38, 180]]) {
             image.composite(bed_image.clone().crop(((from_x + 3) * factor), (from_y * factor), (3 * factor), (3 * factor)), ((to_x + 3) * factor), ((to_y + 3) * factor));
             image.composite(bed_image.clone().crop(((from_x + 6) * factor), (from_y * factor), (3 * factor), (3 * factor)).rotateSimple(rotate_bottom), ((to_x + 9) * factor), ((to_y + 3) * factor));
             image.composite(bed_image.clone().crop((from_x * factor), ((from_y + 3) * factor), (3 * factor), (3 * factor)).rotateSimple(-90), (to_x * factor), ((to_y + 3) * factor));

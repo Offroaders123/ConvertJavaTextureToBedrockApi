@@ -6,11 +6,14 @@ import { DeleteConverter } from "./DeleteConverter.mjs";
  */
 class DrownedConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [from, overlay, to] = this.data;
 
+        /** @type {AbstractConverter[]} */
         const to_delete = [];
 
         if (!(await this.output.exists(from) && await this.output.exists(overlay))) {

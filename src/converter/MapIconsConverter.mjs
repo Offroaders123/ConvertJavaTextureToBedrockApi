@@ -6,7 +6,9 @@ import Jimp from "@geekcornernpm/jimp-plugins";
  */
 class MapIconsConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [from, to] = this.data;

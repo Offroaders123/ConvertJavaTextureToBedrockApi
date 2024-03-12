@@ -6,7 +6,9 @@ import { MetadataConverter } from "./MetadataConverter.mjs";
  */
 class ChestNormalConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         if (MetadataConverter.mcmeta.pack.pack_format < 5) {

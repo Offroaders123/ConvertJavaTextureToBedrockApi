@@ -6,11 +6,14 @@ import { DeleteConverter } from "./DeleteConverter.mjs";
  */
 class SheepConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [sheep, sheep_fur] = this.data;
 
+        /** @type {AbstractConverter[]} */
         const to_delete = [];
 
         if (!(await this.output.exists(sheep) && await this.output.exists(sheep_fur))) {

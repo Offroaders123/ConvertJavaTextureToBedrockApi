@@ -1,3 +1,4 @@
+import Jimp from "@geekcornernpm/jimp-plugins";
 import { AbstractConverter } from "@modifiedcommand/convert-base-api";
 
 /**
@@ -5,7 +6,9 @@ import { AbstractConverter } from "@modifiedcommand/convert-base-api";
  */
 class BannerPatternConverter extends AbstractConverter {
     /**
-     * @inheritDoc
+     * @returns {Promise<AbstractConverter[]>}
+     *
+     * @throws {Error}
      */
     async convert() {
         const [base, patterns, to] = this.data;
@@ -14,6 +17,7 @@ class BannerPatternConverter extends AbstractConverter {
             return [];
         }
 
+        /** @type {Jimp|null} */
         let image = null;
 
         for (const [pattern, color] of patterns) {

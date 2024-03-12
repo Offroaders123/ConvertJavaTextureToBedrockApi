@@ -26,12 +26,15 @@
         "@modifiedcommand/convert-base-api": "1.0.10",
         "uuid": "3.4.0"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "@types/uuid": "^9.0.8"
+    },
     "engines": {
         "node": ">=14.0.0"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org"
     },
-    "main": "src/index.mjs"
+    "main": "src/index.mjs",
+    "types": "types/index.d.mts"
 }
